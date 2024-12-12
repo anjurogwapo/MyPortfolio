@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: url("images/homepagebg.png") no-repeat center center fixed;
+        background-size: cover;
+        font-family: Poppins, sans-serif;
+        height: 100vh;
+        position: relative;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        width: 100%;
+        height: 80px;
+        background: url("images/navbg.png") lightgray 50% / cover no-repeat;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+
+      .logo {
+        width: 150px;
+        height: 130px;
+        background: url("images/anjurologo.png") no-repeat center;
+        background-size: contain;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+      }
+
+      .nav-buttons {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        margin-left: auto;
+        margin-right: 50px;
+      }
+
+      .nav-button {
+        display: flex;
+        width: 100px;
+        height: 25px;
+        padding: 9px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 11px;
+        border-radius: 25px;
+        border: 3px solid #fff;
+        background: #ff6100;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 120%;
+        cursor: pointer;
+        transition: transform 0.3s, background 0.3s ease-in-out;
+      }
+
+      .nav-button a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .nav-button:hover {
+        background: #ff4500;
+        transform: scale(1.05);
+      }
+
+      /* Main Content Section */
+      .main-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - 80px);
+        margin-top: 80px;
+        padding: 20px;
+      }
+
+      /* Polaroid Image Styles */
+      .polaroid-image {
+        width: 462px;
+        height: 535px;
+        background: url("images/polaroid.png") lightgray -363.167px -54px /
+          257.431% 125.047% no-repeat;
+        box-shadow: 0px 4px 17px 0px #000;
+        flex-shrink: 0;
+        opacity: 0.9;
+        margin-right: 50px;
+      }
+
+      .polaroid-image:hover {
+        transform: translateY(-20px);
+        text-shadow: white 0.006em 0.006em 0.007em, #9c9c9c 1px 1px 1px,
+          #9c9c9c 1px 2px 1px, #9c9c9c 1px 3px 1px, #9c9c9c 1px 4px 1px,
+          #9c9c9c 1px 5px 1px, #9c9c9c 1px 6px 1px, #9c9c9c 1px 7px 1px,
+          #9c9c9c 1px 8px 1px, #9c9c9c 1px 9px 1px, #9c9c9c 1px 10px 1px,
+          #9c9c9c 1px 11px 1px, #9c9c9c 1px 12px 1px,
+          rgba(16, 16, 16, 0.4) 1px 38px 26px,
+          rgba(16, 16, 16, 0.2) 1px 42px 30px,
+          rgba(16, 16, 16, 0.2) 1px 46px 65px,
+          rgba(16, 16, 16, 0.4) 1px 50px 95px, white -0.15em -0.1em 100px;
+        transition: all 0.3s ease;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 31px;
+        width: 757px;
+        max-width: 100%;
+        color: #000;
+        text-align: left;
+      }
+
+      .content h1 {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 120%;
+        margin: 0;
+      }
+
+      .content h2 {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 120%;
+        margin: 0;
+      }
+
+      .content p {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 120%;
+        margin-top: 0px;
+      }
+
+      /* Right Images */
+      .image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-evenly;
+        gap: 30px;
+        position: relative;
+      }
+
+      .homedesign1 {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 250px;
+        height: 450px;
+        transform-origin: center;
+        background: url("images/homedesign2.png") no-repeat center center;
+        background-size: contain;
+        opacity: 0.8;
+        animation: rotateCounterClockwise 5s infinite linear;
+      }
+
+      /* Rotation Animation */
+      @keyframes rotateCounterClockwise {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(-360deg); /* Counterclockwise rotation */
+        }
+      }
+
+      .homedesign2 {
+        width: 400px;
+        height: 400px;
+        flex-shrink: 0;
+        background: url("images/homedesign1.png") no-repeat center center;
+        background-size: contain;
+        animation: pop 2s infinite ease-in-out, rotate 5s infinite linear;
+        opacity: 0.8;
+      }
+
+      /* Pop Animation */
+      @keyframes pop {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* Socials container - fixed at the bottom right */
+      .socials-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .socials-text {
+        color: #000;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 120%;
+        margin-right: 10px;
+      }
+
+      .social-icon {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        gap: 10px;
+        border-radius: 50%;
+        border: 3px solid #000;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        cursor: pointer;
+      }
+
+      .social-icon:hover {
+        transform: scale(1.1);
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      .social-icon img {
+        width: 60%;
+        height: 60%;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <div class="navbar">
+      <a href="homepage.html">
+        <div class="logo"></div>
+      </a>
+      <div class="nav-buttons">
+        <div class="nav-button"><a href="services.html">Services</a></div>
+        <div class="nav-button"><a href="aboutme.html">About Me</a></div>
+        <div class="nav-button"><a href="contact.html">Contact</a></div>
+      </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-container">
+      <div class="polaroid-image"></div>
+      <div class="content">
+        <h1>SUP! I’m</h1>
+        <h2>Chim Anjuro Batayola</h2>
+        <p>
+          A designer with mad love for crafting visuals and experiences that hit
+          different. Whether I’m behind the screen designing or in front of the
+          lens modeling, this is my space where creativity runs wild, and ideas
+          come alive. Dive in, vibe out, and let’s make something epic together!
+        </p>
+      </div>
+      <div class="image-container">
+        <div class="homedesign1"></div>
+        <div class="homedesign2"></div>
+      </div>
+    </div>
+
+    <!-- Socials Section -->
+    <div class="socials-container">
+      <div class="socials-text">My Socials</div>
+      <a
+        href="https://www.facebook.com/profile.php?id=100012794499588"
+        class="social-icon"
+        target="_blank"
+      >
+        <img src="images/facebook.svg" alt="Facebook" />
+      </a>
+      <a
+        href="https://www.instagram.com/chim_anjuro/"
+        class="social-icon"
+        target="_blank"
+      >
+        <img src="images/instagram.svg" alt="Instagram" />
+      </a>
+      <a
+        href="https://www.tiktok.com/@chimanjuro"
+        class="social-icon"
+        target="_blank"
+      >
+        <img src="images/tiktok.svg" alt="TikTok" />
+      </a>
+    </div>
+  </body>
+</html>

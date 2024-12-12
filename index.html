@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Borders</title>
+    <style>
+      /* Resetting body margins and setting a background image */
+      body {
+        margin: 0;
+        padding: 0;
+        background: url("images/frontpage.png") no-repeat center center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* Center button with popping animation and hover effect */
+      .center-image {
+        width: 550px;
+        height: 250.183px;
+        flex-shrink: 0;
+        background: url("images/anjurologometal.svg") no-repeat center center;
+        background-size: contain;
+        z-index: 10; /* Ensures it's above other elements */
+        position: relative;
+        animation: pop 1.5s infinite; /* Popping animation */
+        cursor: pointer; /* Makes it look clickable */
+        transition: transform 0.3s, box-shadow 0.3s ease-in-out; /* Smooth hover effect */
+      }
+
+      /* Hover effect for the button: spinning animation */
+      .center-image:hover {
+        animation: spin 2s linear infinite; /* Spinning effect on hover */
+      }
+
+      /* Popping animation */
+      @keyframes pop {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      /* Spinning animation */
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg); /* Complete rotation */
+        }
+      }
+
+      /* Right side image (bottom-right) rotating clockwise */
+      .bottom-right-image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 500px;
+        height: 1000px;
+        flex-shrink: 0;
+        background: url("images/rightbottom.png") no-repeat center center;
+        background-size: 239.684% 123.246%;
+        animation: rotate-clockwise 15s infinite linear; /* Clockwise rotation */
+        z-index: 5; /* Below the center image */
+      }
+
+      /* Left side image (bottom-left) rotating counterclockwise */
+      .left-side-image {
+        position: absolute;
+        bottom: 0;
+        left: -700px;
+        width: 1500px;
+        height: 762.201px;
+        transform: rotate(34.235deg);
+        flex-shrink: 0;
+        background: url("images/leftbottom.png") no-repeat center center;
+        background-size: contain;
+        animation: rotate-counterclockwise 15s infinite linear; /* Counterclockwise rotation */
+        z-index: 1; /* Ensures it is behind the center image */
+      }
+
+      /* Animation for clockwise rotation of the right side image */
+      @keyframes rotate-clockwise {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg); /* Rotating clockwise */
+        }
+      }
+
+      /* Animation for counterclockwise rotation of the left side image */
+      @keyframes rotate-counterclockwise {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(-360deg); /* Rotating counterclockwise */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Center image (button) -->
+    <a href="homepage.html">
+      <div class="center-image"></div>
+    </a>
+
+    <!-- Right side image (rotating clockwise) -->
+    <div class="bottom-right-image"></div>
+
+    <!-- Left side image (rotating counterclockwise) -->
+    <div class="left-side-image"></div>
+  </body>
+</html>

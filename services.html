@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: url("images/servicesbg.png") no-repeat center center fixed;
+        background-size: cover;
+        font-family: Poppins, sans-serif;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        width: 100%;
+        height: 80px;
+        background: url("images/navbg.png") lightgray 50% / cover no-repeat;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+
+      .logo {
+        width: 150px;
+        height: 130px;
+        background: url("images/anjurologo.png") no-repeat center;
+        background-size: contain;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+      }
+
+      .nav-buttons {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        margin-left: auto;
+        margin-right: 50px;
+      }
+
+      .nav-button {
+        display: flex;
+        width: 100px;
+        height: 25px;
+        padding: 9px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 11px;
+        border-radius: 25px;
+        border: 3px solid #fff;
+        background: #ff6100;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 120%;
+        cursor: pointer;
+        transition: transform 0.3s, background 0.3s ease-in-out;
+      }
+
+      .nav-button a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .nav-button:hover {
+        background: #ff4500;
+        transform: scale(1.05);
+      }
+
+      /* Buttons Container */
+      .buttons-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 1100px;
+        margin: 120px auto 0;
+        padding: 20px;
+      }
+
+      .button {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-radius: 20px;
+        border: 1px solid #000;
+        padding: 20px;
+        height: 250px;
+        background: #ff6100;
+        transition: box-shadow 0.3s ease-in-out;
+      }
+
+      .button:hover {
+        box-shadow: 0px 0px 20px 5px rgba(255, 255, 0, 0.8);
+      }
+
+      .button .image {
+        width: 200px;
+        height: 200px;
+        border-radius: 15px;
+        background: lightgray 50% / contain no-repeat;
+        flex-shrink: 0;
+        margin-right: 20px;
+      }
+
+      .button .text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .button .title {
+        font-family: Inter, sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        line-height: 120%;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+
+      .button .description {
+        font-family: Inter, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 120%;
+        color: #fff;
+      }
+
+      /* Specific button styles */
+      .button.art {
+        background: #ffb000;
+      }
+
+      .button.art .image {
+        background: url("images/art.png") lightgray 50% / contain no-repeat;
+      }
+
+      .button.uiux {
+        background: #ff7a28;
+      }
+
+      .button.uiux .image {
+        background: url("images/uiux.png") lightgray 50% / contain no-repeat;
+      }
+
+      .button.graphic {
+        background: #ff5100;
+      }
+
+      .button.graphic .image {
+        background: url("images/graphic.png") lightgray 50% / contain no-repeat;
+      }
+
+      .button.video {
+        background: #f88a04;
+      }
+
+      .button.video .image {
+        background: url("images/video.png") lightgray 50% / contain no-repeat;
+      }
+
+      .button.photo {
+        background: #ffb200;
+      }
+
+      .button.photo .image {
+        background: url("images/photo.png") lightgray 50% / contain no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <a href="homepage.html">
+        <div class="logo"></div>
+      </a>
+      <div class="nav-buttons">
+        <div class="nav-button"><a href="services.html">Services</a></div>
+        <div class="nav-button"><a href="aboutme.html">About Me</a></div>
+        <div class="nav-button"><a href="contact.html">Contact</a></div>
+      </div>
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="buttons-container">
+      <!-- Button 1 -->
+      <div class="button">
+        <div
+          class="image"
+          style="background: url('images/model.png') no-repeat center / contain"
+        ></div>
+        <div class="text">
+          <div class="title">Modeling</div>
+          <div class="description">
+            Available for photoshoots, video work, and brand partnerships.
+          </div>
+        </div>
+      </div>
+      <!-- Button 2 -->
+      <div class="button art">
+        <div class="image"></div>
+        <div class="text">
+          <div class="title">Art</div>
+          <div class="description">
+            Creating in all forms of art whether it’s sketches, paintings, or
+            digital creations.
+          </div>
+        </div>
+      </div>
+      <!-- Button 3 -->
+      <div class="button uiux">
+        <div class="image"></div>
+        <div class="text">
+          <div class="title">UI/UX Design</div>
+          <div class="description">
+            Crafting user interfaces and experiences that are both beautiful and
+            functional.
+          </div>
+        </div>
+      </div>
+      <!-- Button 4 -->
+      <div class="button graphic">
+        <div class="image"></div>
+        <div class="text">
+          <div class="title">Graphic Design</div>
+          <div class="description">
+            Creating visuals effectively. For logos, branding, and marketing
+            materials.
+          </div>
+        </div>
+      </div>
+      <!-- Button 5 -->
+      <div class="button video">
+        <div class="image"></div>
+        <div class="text">
+          <div class="title">Video Edit & Filming</div>
+          <div class="description">
+            I edit and film videos that bring creative concepts to life.
+          </div>
+        </div>
+      </div>
+      <!-- Button 6 -->
+      <div class="button photo">
+        <div class="image"></div>
+        <div class="text">
+          <div class="title">Photography</div>
+          <div class="description">
+            Capturing moments and telling stories through the lens.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
